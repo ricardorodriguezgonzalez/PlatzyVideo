@@ -1,6 +1,33 @@
 {
   "initialState": {
-    "mylist": [],
+    "mylist": [
+      {
+        "id": 9,
+        "slug": "tvshow-9",
+        "title": "Alien Highway",
+        "type": "Action",
+        "language": "English",
+        "year": 2019,
+        "contentRating": "16+",
+        "duration": 128,
+        "cover": "http://dummyimage.com/800x600.png/604180/ffffff",
+        "description": "Vestibulum ac est lacinia nisi venenatis tristique",
+        "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+      },
+      {
+        "id": 8,
+        "slug": "tvshow-8",
+        "title": "Stargate Atlantis",
+        "type": "Action",
+        "language": "English",
+        "year": 2012,
+        "contentRating": "16+",
+        "duration": 148,
+        "cover": "http://dummyimage.com/800x600.png/306880/ffffff",
+        "description": "Vestibulum ac est lacinia nisi venenatis tristique",
+        "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+      }
+    ],
     "trends": [
       {
         "id": 2,
@@ -82,32 +109,6 @@
       }
     ],
     "originals": [
-      {
-        "id": 8,
-        "slug": "tvshow-8",
-        "title": "Stargate Atlantis",
-        "type": "Action",
-        "language": "English",
-        "year": 2012,
-        "contentRating": "16+",
-        "duration": 148,
-        "cover": "http://dummyimage.com/800x600.png/306880/ffffff",
-        "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-        "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
-      },
-      {
-        "id": 9,
-        "slug": "tvshow-9",
-        "title": "Alien Highway",
-        "type": "Action",
-        "language": "English",
-        "year": 2019,
-        "contentRating": "16+",
-        "duration": 128,
-        "cover": "http://dummyimage.com/800x600.png/604180/ffffff",
-        "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-        "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
-      },
       {
         "id": 10,
         "slug": "tvshow-10",
