@@ -15,18 +15,18 @@ const Home = ({myList, trends, originals}) => {
             {myList.length > 0 &&
             <Categories title="Mi lista">
                 <Carousel>
-                    {myList.map(item => <CarouselItem key={item.id} {...item}/>)}
+                    {myList.map(item => <CarouselItem key={`${item.id}_myList`} {...item} isList/>)}
                 </Carousel>
             </Categories>
             }
             <Categories title="Tendencias">
                 <Carousel>
-                    {trends.map(item => <CarouselItem key={item.id} {...item}/>)}
+                    {trends.map(item => <CarouselItem key={`${item.id}_trend`} {...item} />)}
                 </Carousel>
             </Categories>
             <Categories title="Originales">
                 <Carousel>
-                    {originals.map(item => <CarouselItem key={item.id} {...item}/>)}
+                    {originals.map(item => <CarouselItem key={`${item.id}_original`} {...item} />)}
                 </Carousel>
             </Categories>
         </>

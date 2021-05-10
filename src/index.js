@@ -1,41 +1,14 @@
 import React from "react";
-import ReactDom from "react-dom";
+import ReactDOM from 'react-dom';
 import App from "./routes/App.js";
 import {Provider} from 'react-redux';
-import {createStore} from "redux";
+import { createStore, compose } from 'redux';
 import reducer from './reducers';
 
 const initialState = {
     "user": {},
     "playing": {},
-    "myList": [
-        {
-            "id": 9,
-            "slug": "tvshow-9",
-            "title": "Alien Highway",
-            "type": "Action",
-            "language": "English",
-            "year": 2019,
-            "contentRating": "16+",
-            "duration": 128,
-            "cover": "http://dummyimage.com/800x600.png/604180/ffffff",
-            "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
-        },
-        {
-            "id": 8,
-            "slug": "tvshow-8",
-            "title": "Stargate Atlantis",
-            "type": "Action",
-            "language": "English",
-            "year": 2012,
-            "contentRating": "16+",
-            "duration": 148,
-            "cover": "http://dummyimage.com/800x600.png/306880/ffffff",
-            "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
-        }
-    ],
+    "myList": [],
     "trends": [
         {
             "id": 2,
@@ -48,7 +21,7 @@ const initialState = {
             "duration": 164,
             "cover": "http://dummyimage.com/800x600.png/99118E/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
         },
         {
             "id": 3,
@@ -61,7 +34,7 @@ const initialState = {
             "duration": 137,
             "cover": "http://dummyimage.com/800x600.png/302140/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
         },
         {
             "id": 4,
@@ -74,7 +47,7 @@ const initialState = {
             "duration": 163,
             "cover": "http://dummyimage.com/800x600.png/5472FF/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
         },
         {
             "id": 5,
@@ -87,7 +60,7 @@ const initialState = {
             "duration": 194,
             "cover": "http://dummyimage.com/800x600.png/B36F20/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
         },
         {
             "id": 6,
@@ -100,7 +73,7 @@ const initialState = {
             "duration": 124,
             "cover": "http://dummyimage.com/800x600.png/CCC539/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
         },
         {
             "id": 7,
@@ -113,10 +86,36 @@ const initialState = {
             "duration": 179,
             "cover": "http://dummyimage.com/800x600.png/FF7A90/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
         }
     ],
     "originals": [
+        {
+            "id": 8,
+            "slug": "tvshow-8",
+            "title": "Stargate Atlantis",
+            "type": "Action",
+            "language": "English",
+            "year": 2012,
+            "contentRating": "16+",
+            "duration": 148,
+            "cover": "http://dummyimage.com/800x600.png/306880/ffffff",
+            "description": "Vestibulum ac est lacinia nisi venenatis tristique",
+            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
+        },
+        {
+            "id": 9,
+            "slug": "tvshow-9",
+            "title": "Alien Highway",
+            "type": "Action",
+            "language": "English",
+            "year": 2019,
+            "contentRating": "16+",
+            "duration": 128,
+            "cover": "http://dummyimage.com/800x600.png/604180/ffffff",
+            "description": "Vestibulum ac est lacinia nisi venenatis tristique",
+            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
+        },
         {
             "id": 10,
             "slug": "tvshow-10",
@@ -128,7 +127,7 @@ const initialState = {
             "duration": 346,
             "cover": "http://dummyimage.com/800x600.png/FF91BA/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
         },
         {
             "id": 11,
@@ -141,7 +140,7 @@ const initialState = {
             "duration": 226,
             "cover": "http://dummyimage.com/800x600.png/45807C/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
         },
         {
             "id": 12,
@@ -154,7 +153,7 @@ const initialState = {
             "duration": 190,
             "cover": "http://dummyimage.com/800x600.png/577380/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
         },
         {
             "id": 13,
@@ -167,13 +166,14 @@ const initialState = {
             "duration": 160,
             "cover": "http://dummyimage.com/800x600.png/5472FF/ffffff",
             "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
         }
     ]
 };
-const store = createStore(reducer, initialState);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, initialState, composeEnhancers);
 
-ReactDom.render(
+ReactDOM.render(
     <Provider store={store}>
         <App/>
     </Provider>,
